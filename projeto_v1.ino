@@ -6,10 +6,9 @@
 LiquidCrystal lcd(8 , 9, 10, 11, 12, 13); // pinos digitais do arduino
 
 DHT sensor_dht(2, DHT11); //(pino ,tipo de sensor dht)
-int mq2 = A0;
+int mq2_pin = A0;
 int tempo = 5000;
 String dados;
-
 
 void setup() {
   
@@ -26,12 +25,12 @@ void setup() {
 
 void loop() {
 
-  int leitura_mq2 = analogRead(mq2);
-  float h = sensor_dht.readHumidity();//Umidade
-  int t = sensor_dht.readTemperature();//temperatura
+  int leitura_mq2 = analogRead(mq2_pin);
+  float umidade = sensor_dht.readHumidity(); 
+  int temperatura = sensor_dht.readTemperature();
 
   
-  if (isnan(h) || isnan(t)) {
+  if (isnan(umidade) || isnan(temperatura)) {
     lcd.setCursor(0, 0);
     lcd.print("Falha de leitura");
     lcd.setCursor(0, 1);
@@ -41,14 +40,14 @@ void loop() {
   else {
     
     // Informações enviadas pela porta serial
-    dados = String(h) + "|" + String(t) + "|" + String(leitura_mq2); 
+    dados = String(umidade) + "|" + String(temperatura) + "|" + String(leitura_mq2); 
     Serial.println(dados);
     digitalWrite(3, LOW);
     delay(tempo);
     //Imprimimdo informações no display
     lcd.clear();
-    lcd.setCursor(0, 0); lcd.print("Umi:"); lcd.setCursor(4,  0);  lcd.print(int(h));  lcd.setCursor(6, 0);  lcd.print("%");
-    lcd.setCursor(8, 0); lcd.print("Tem:"); lcd.setCursor(12, 0);  lcd.print(t);       lcd.setCursor(14, 0); lcd.print((char)223); lcd.setCursor(15, 0); lcd.print("C");
+    lcd.setCursor(0, 0); lcd.print("Umi:"); lcd.setCursor(4,  0);  lcd.print(int(umidade));  lcd.setCursor(6, 0);  lcd.print("%");
+    lcd.setCursor(8, 0); lcd.print("Tem:"); lcd.setCursor(12, 0);  lcd.print(temperatura);       lcd.setCursor(14, 0); lcd.print((char)223); lcd.setCursor(15, 0); lcd.print("C");
     lcd.setCursor(0, 1); lcd.print("MQ2:"); lcd.setCursor(4,  1);  lcd.print(leitura_mq2);
     digitalWrite(3, HIGH);
   }
