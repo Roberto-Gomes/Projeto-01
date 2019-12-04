@@ -33,7 +33,7 @@ void setup() {
   lcd.begin(16, 2);   //(16 colunas, 2 linhas)
   Serial.begin(9600);
   sensor_dht.begin();
-  pinMode(3, OUTPUT); // led 1 (blink
+  pinMode(3, OUTPUT); // led 1 (blink)
   pinMode(5, OUTPUT); // led 2 (Indicador de detecção)
   digitalWrite(3, LOW);
   digitalWrite(5, LOW);
@@ -71,7 +71,7 @@ void loop() {
     lcd.clear();
     lcd.setCursor(0, 0); lcd.print("Gas detectado"); lcd.setCursor(0, 1); lcd.print("MQ2:"); lcd.setCursor(4, 1); lcd.print(leitura_mq2);
     digitalWrite(5 , HIGH);
-    for (int freq = 40; freq <= 440; freq++) { // frequência crescente 40hz-440hz
+    for (int freq = 40; freq <= 440; freq++) { //40hz-440hz
       tone(4, freq);
       delay(1);
     }
