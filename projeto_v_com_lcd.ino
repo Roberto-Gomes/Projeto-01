@@ -1,23 +1,22 @@
-/*                 CONEXÕES
+/*                  CONEXÕES
   PINOS DO ARDUINO
-
   VCC------------------------------ Pino K  (16) DISPLAY
   GND------------------------------ Pino A  (15) DISPLAY
-        D13---------------------- Pino D7 (14) DISPLAY
-        D12---------------------- Pino D6 (13) DISPLAY
-        D11---------------------- Pino D5 (12) DISPLAY
-        D10---------------------- Pino D4 (11) DISPLAY
-        D9----------------------- Pino E  (6)  DISPLAY
+        D13------------------------ Pino D7 (14) DISPLAY
+        D12------------------------ Pino D6 (13) DISPLAY
+        D11------------------------ Pino D5 (12) DISPLAY
+        D10------------------------ Pino D4 (11) DISPLAY
+        D9------------------------- Pino E  (6)  DISPLAY
   GND------------------------------ Pino RW (5)  DISPLAY
-        D8----------------------- Pino RS (4)  DISPLAY                              GND--|
-                                  Pino VO (3)  DISPLAY----Pino central de Potenciômetro--| Controle de contraste
+        D8------------------------- Pino RS (4)  DISPLAY                              GND--|
+                                    Pino VO (3)  DISPLAY----Pino central de Potenciômetro--| Controle de contraste
   VCC------------------------------ Pino VDD(2)  DISPLAY                              VCC--|
   GND------------------------------ Pino VSS(1)  DISPLAY
 
-  A0-    D5------------------------ Led 2
-  |    D4------------------------ Buzzer
-  |    D3------------------------ LED 1 (BLINK)
-  |    D2------------------------ Pino data DH11
+  A0-  D5-------------------------- Led 2
+  |    D4-------------------------- Buzzer
+  |    D3-------------------------- LED 1 
+  |    D2-------------------------- Pino data DH11
   |
   |______________________________MQ2
 */
