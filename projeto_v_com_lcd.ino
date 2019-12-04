@@ -55,8 +55,7 @@ void loop() {
     lcd.print("Falha de leitura");
     lcd.setCursor(0, 1);
     lcd.print("no sensor DHT11");
-   
-   
+    
   }
   else {
     
