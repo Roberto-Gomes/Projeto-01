@@ -76,7 +76,7 @@ void loop() {
     lcd.clear();
     lcd.setCursor(0, 0); lcd.print("Gas detectado"); lcd.setCursor(0, 1); lcd.print("MQ2:"); lcd.setCursor(4, 1); lcd.print(leitura_mq2);
     digitalWrite(5 , HIGH);
-    for (int freq = 40; freq <= 440; freq++) { // frequência crescente 40hz-440hz
+    for (int freq = 40; freq <= 440; freq++) { 
       tone(4, freq);
       delay(1);
     }
